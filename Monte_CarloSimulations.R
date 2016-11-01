@@ -5,10 +5,10 @@
 #Import count data for replicates of a specific chemostat RATEseq condition
 
 #Estimate parameters from real data to infer NB probability distribution
-  #Calcute mean and variance of each gene and store values (using a loop with iterations=number of simulations chosen [1000])
+  #Calculate mean and variance (dispersion) of each gene and store values (using a loop with iterations=number of simulations chosen [1000])
     #Should this be estimated for each gene and for each timepoint individually by using replicates? This is a problem if we have less than triplicate samples.
     #Alternatively, dispersion can be calculated like in DEseq, by using genes with similar count values.
-    #Alternatively, dispersion can be calculated across timepoints for the same gene with the assumption that dispersion does not change over time, not sure this assumption hold however.
+    #Alternatively, dispersion can be calculated across timepoints for the same gene with the assumption that dispersion does not change over time, not sure this assumption holds however.
 
   #For each gene, randomly sample count number(?) from gene-specific NB using saved gene estimates.
   #I will choose the number of timepoints to be sampled (sequentially dropping the number of timepoints that are sampled).
@@ -31,4 +31,4 @@
 #Lingering Question:
   #What type of input should be used and what type of simulated data should be generated, i.e counts or normalized counts? (I am leaning towards normalized counts).
   #Does labeling + RNA-seq also have a NB distribution?
-  #How should I quantify whether a timepoint number is negatively affecting the estimation of degradation rate constants?
+  #How should I quantify whether a timepoint number is compromising the estimation of degradation rate constants?
